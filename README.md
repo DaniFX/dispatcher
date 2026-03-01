@@ -47,3 +47,19 @@ go run cmd/server/main.go
 - ```/internal/grpcclient```: Logica di comunicazione verso i microservizi privati.
 - ```/internal/config```: Integrazione nativa con GCP Secret Manager.
 - ```/proto```: Definizione dei contratti gRPC.
+
+```plaintext
+/dispatcher
+├── cmd/
+│   └── server/          # Main entry point (main.go)
+├── internal/
+│   ├── api/             # Handlers HTTP (Gin/Echo)
+│   ├── grpcclient/      # Client per parlare con i microservizi interni
+│   ├── config/          # Caricamento segreti da GCP Secret Manager
+│   └── service/         # Logica di business del dispatcher
+├── proto/               # File .proto per gRPC
+├── scripts/             # Script di deploy/build
+├── README.md
+├── go.mod
+└── Dockerfile
+```
